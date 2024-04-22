@@ -1,23 +1,23 @@
-from flask import Flask, render_template, request
-import collections.abc as collections
-from flask_nav import Nav
+from flask import Flask, render_template, request, flash
 from markdown import markdown
 from flask_bootstrap import Bootstrap
-from flask_nav.elements import *
-
+from forms import LoginForm
 
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
-nav = Nav()
+app.config.from_pyfile('config')
 
-navbar = Navbar('Bootstrap测试',
-                View('主页', 'index'),
-                View('服务', 'services'),
-                View('项目', 'projects'),
-                View('关于', 'about'))
-nav.register_element('top', navbar)
-nav.init_app(app)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm() # 创建登录表单对象
+    flash('登录成功')
+    return render_template('login.html',
+                           title='登录',
+                           form=form)
+
+
 
 
 
