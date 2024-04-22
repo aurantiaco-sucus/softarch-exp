@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as ui %}
+
+{% block navbar %}
+{% set links = [
+  ('Home', url_for('.index')),
+  ('Services', url_for('.services')),
+  ('Projects', url_for('.projects')),
+  ('About', url_for('.about')),
+] %}
+
+<div class="navbar navbar-fixed-up">
+    <nav>
+{% for label, href in links %}
+    {% if not loop.first %} | {% endif %}
+    {% if href is current_link %}
+        {{ label }}
+    {% else %}
+        <a href="{{ href }}">{{ label }}</a>
+    {% endif %}
+{% endfor %}
+    </nav>
+</div>
+{% endblock navbar %}
+
+{% block content2 %}
+<div class="page-header">
+    <div class="container">
+        <h1>{{title}}</h1>
+    </div>
+</div>
+
+<div class="containter">
+    <form>
+        {{ ui.input('text', 'username', 'zhangsan') }}
+        {{ ui.input('password', 'password', '1234') }}
+    </form>
+</div>
+{% endblock content2 %}
+
+{% block footer %}
+<hr>
+{{ super() }}
+{% endblock footer %}

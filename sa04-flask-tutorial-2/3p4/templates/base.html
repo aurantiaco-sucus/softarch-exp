@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    {% block head %}
+        <title>{% block title %}{% endblock title %}</title>
+        {% include ['includes/_head.html'] %}
+    {% endblock head %}
+</head>
+<body>
+
+<header>
+    {% block header %}
+    {% endblock header %}
+</header>
+
+<div id="content">
+    {% block content %}
+    {% endblock content %}
+</div>
+
+<footer>
+    {% block footer %}
+    Copyright 2023 by <a href="https://www.gec-edu.org/">张老湿</a>
+    {% endblock footer %}
+</footer>
+
+</body>
+</html>

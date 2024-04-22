@@ -1,0 +1,32 @@
+{% extends 'bootstrap/base.html' %}
+
+<head>
+    {% block head %}
+  {{ super() }}
+  {% include ['includes/_head.html'] %}
+{% endblock head %}
+</head>
+
+{% block content %}
+<header>
+    {% block header %}
+    {% endblock header %}
+</header>
+
+
+
+<div id="content">
+
+    {% block content2 %}
+    {% endblock content2 %}
+</div>
+
+
+
+<footer>
+    {% block footer %}
+    Copyright 2023 by <a href="https://www.gec-edu.org/">张老湿</a>
+    {% endblock footer %}
+</footer>
+
+{% endblock content %}

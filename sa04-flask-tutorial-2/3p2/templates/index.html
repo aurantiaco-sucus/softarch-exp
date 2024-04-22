@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+{% set links = [
+  ('Home', url_for('.index')),
+  ('Services', url_for('.services')),
+  ('Projects', url_for('.projects')),
+  ('About', url_for('.about')),
+] %}
+
+
+
+{% for label, href in links %}
+    {% if not loop.first %} | {% endif %}
+    {% if href is current_link %}
+        {{ label }}
+    {% else %}
+        <a href="{{ href }}">{{ label }}</a>
+    {% endif %}
+{% endfor %}
+
+
+
+</body>
+</html>
