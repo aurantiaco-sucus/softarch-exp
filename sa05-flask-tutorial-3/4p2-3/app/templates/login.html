@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% import '_macros.html' as ui %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block content2 %}
 <div class="page-header">
@@ -8,11 +9,8 @@
     </div>
 </div>
 
-<div class="containter">
-    <form>
-        {{ ui.input('text', 'username', 'zhangsan') }}
-        {{ ui.input('password', 'password', '1234') }}
-    </form>
+<div class="container">
+    {{ wtf.quick_form(form) }}
 </div>
 {% endblock content2 %}
 

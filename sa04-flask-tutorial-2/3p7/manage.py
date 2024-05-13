@@ -1,12 +1,20 @@
 from flask import Flask, render_template, request
 from markdown import markdown
 from flask_bootstrap import Bootstrap
-
+from flask_nav import Nav
+from flask_nav.elements import *
 
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
-
+nav = Nav()
+navbar = Navbar('Bootstrap测试',
+                View('主页', 'index'),
+                View('服务', 'services'),
+                View('项目', 'projects'),
+                View('关于', 'about'))
+nav.register_element('top', navbar)
+nav.init_app(app)
 
 
 @app.route('/')
