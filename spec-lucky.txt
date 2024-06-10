@@ -1,0 +1,16 @@
+Werkzeug
+setuptools
+MarkupSafe
+jinja2
+Flask
+itsdangerous
+
+markdown
+flask-bootstrap
+flask-nav
+WTForms
+Flask-WTF
+sqlalchemy
+flask-sqlalchemy
+mysqlclient
+Flask-Migrate
