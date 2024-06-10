@@ -14,3 +14,4 @@ sqlalchemy
 flask-sqlalchemy
 mysqlclient
 Flask-Migrate
+Flask-Login
