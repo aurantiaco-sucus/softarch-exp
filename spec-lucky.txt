@@ -16,3 +16,5 @@ mysqlclient
 Flask-Migrate
 Flask-Login
 Flask-PageDown
+Flask-Avatar
+Flask-Gravatar
