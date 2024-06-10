@@ -15,3 +15,4 @@ flask-sqlalchemy
 mysqlclient
 Flask-Migrate
 Flask-Login
+Flask-PageDown
