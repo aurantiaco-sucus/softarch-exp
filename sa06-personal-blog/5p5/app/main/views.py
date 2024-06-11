@@ -64,12 +64,6 @@ def projects():
     return 'Projects'
 
 
-@main.route('/post', methods=['GET', 'POST'])
-@login_required
-def post():
-    return 'post'
-
-
 @main.route('/post/<int:id>', methods=['GET', 'POST'])
 @login_required
 def post(id): # 评论的 id 必须大于0
@@ -84,7 +78,6 @@ def post(id): # 评论的 id 必须大于0
                           author=current_user)
         db.session.add(post)
         db.session.commit()
-
 
 
     return render_template('posts/detail.html',

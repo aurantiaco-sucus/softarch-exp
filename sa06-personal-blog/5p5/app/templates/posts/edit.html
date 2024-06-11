@@ -27,3 +27,7 @@
         </form>
     </div>
 {% endblock content2 %}
+{% block scripts %}
+    {{ super() }}
+    {{ pagedown.include_pagedown() }}
+{% endblock scripts %}

@@ -25,7 +25,7 @@ def create_app():
     # 引入 secret_key
     app.config.from_pyfile('config')
     # 配置数据库的连接 参数包括：登录用户名:登陆密码@主机名(端口号)/数据库名
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:1234@127.0.0.1/flasktest'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://scott:123456@127.0.0.1:3306/flasktest'
     app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
     # 2 把创建好的 app 对象给其他类或模块使用
